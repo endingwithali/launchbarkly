@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Router from 'next/router'
 import styles from '../styles/Home.module.css'
-import fetch from 'isomorphic-unfetch';
 import {useState} from 'react'
+// import fetch from 'isomorphic-unfetch';
+
 
 export default function Home() {
   const [errorMsg, setErrorMsg] = useState('')
@@ -11,7 +12,7 @@ export default function Home() {
 
   async function handleSubmit(event){ 
     event.preventDefault()
-    fetch('/api/auth',{
+    fetch('/api/signup',{
       method: 'POST',
       body: JSON.stringify({
         email,
@@ -22,20 +23,19 @@ export default function Home() {
       return result.json()
     })
     .then((data)=>{
-      if (data.error){
-        setErrorMsg(data.error)
-      } else {
-        console.log('success')
-
-        Router.push('/')
-      }
+        if (data.error){
+            setErrorMsg(data.error)
+        }
+        else{
+            Router.push('/'+email)
+        }
     })
   }
 
   return (
     <div className={styles.container}>
       <Head>
-        <title>SIGN IN</title>
+        <title>CSIGN UPp</title>
       </Head>
 
       <main className={styles.main}>
@@ -63,15 +63,8 @@ export default function Home() {
             value={password}
             onChange={(e)=> setPassword(e.target.value)}
           />
-          <button type="submit">Sign in</button> or{' '}
+          <button type="submit">Sign up</button> or{' '}
         </form>
-
-        <button onClick={
-          (e)=>{
-            e.preventDefault()
-            Router.push('/signup')
-          }
-        }>Sign signup</button>
       </main>
 
     </div>
