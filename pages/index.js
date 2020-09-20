@@ -26,8 +26,7 @@ export default function Home() {
         setErrorMsg(data.error)
       } else {
         console.log('success')
-
-        Router.push('/')
+        Router.push('/'+email)
       }
     })
   }
