@@ -8,13 +8,21 @@
     "start": "next start"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "cookie": "^0.4.1",
+    "cookie-cutter": "^0.2.0",
     "isomorphic-unfetch": "^3.0.0",
     "js-cookie": "^2.2.1",
+    "launchdarkly-node-client-sdk": "^1.4.6",
+    "launchdarkly-node-server-sdk": "^5.13.4",
     "next": "9.5.3",
     "next-iron-session": "^4.1.8",
+    "nookies": "^2.4.0",
+    "pbkdf2": "^3.1.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "serverless-mysql": "^1.5.4"
+    "serverless-mysql": "^1.5.4",
+    "sha256": "^0.2.0",
+    "tailwindcss": "^1.8.10"
   }
 }

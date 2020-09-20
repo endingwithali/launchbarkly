@@ -3,6 +3,7 @@ import Router from 'next/router'
 import styles from '../styles/Home.module.css'
 import {useState} from 'react'
 // import fetch from 'isomorphic-unfetch';
+import {setCookie} from 'nookies'
 
 
 export default function Home() {
@@ -25,8 +26,8 @@ export default function Home() {
     .then((data)=>{
         if (data.error){
             setErrorMsg(data.error)
-        }
-        else{
+        } else {
+            setCookie(null, 'barklyToken', 'loggedon')
             Router.push('/'+email)
         }
     })

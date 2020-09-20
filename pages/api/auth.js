@@ -1,7 +1,5 @@
 import {findUser} from '../../lib/user.js'
 import {validate} from '../../lib/password.js'
-import { resolve } from 'path'
-import { resetWarningCache } from 'prop-types'
 import jsHttpCookie from 'cookie';
 
 export default async (req, res) => {
@@ -19,15 +17,6 @@ export default async (req, res) => {
             return;
         }
         if (validate(result, user.password)){
-            res.setHeader(
-                'Set-Cookie', 
-                jsHttpCookie.serialize('token',process.env.APPLICATION_SECRET), 
-                { 
-                    maxAge: 10000000000, 
-                    sameSite: 'none' 
-                }
-            )
-            
             res.statusCode = 200
             res.json({message: "success"})
 
