@@ -11,13 +11,15 @@ export async function getServerSideProps(context){
     await fetch('https://emailrep.io/'+context.params.email,{
         method: 'GET',
         headers:{
-            'Key': process.env.EMAIL_REP
+            'Key': process.env.EMAIL_REP,
+            'User-Agent': 'launchbarkly',
+            'Conect-Type': 'application/json'
         }
       })
-      .then((result)=>{
-        console.log("HER")
-        console.log(result.body.email)
-        return result.json()
+      .then((res)=>{
+        return res.json()
+      }).then((data)=>{
+        console.log(data)
       })
 
     return {
