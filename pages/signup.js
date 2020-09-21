@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Router from 'next/router'
-import styles from '../styles/Home.module.css'
 import {useState} from 'react'
 // import fetch from 'isomorphic-unfetch';
 import {setCookie} from 'nookies'
@@ -34,38 +33,66 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>CSIGN UPp</title>
+        <title>🚀🐶 - Sign Up</title>
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to
-        </h1>
+      <main className='flex h-screen justify-center items-center'>
+        <div className='flex flex-col'>
+          <h1 className='text-5xl text-center'>
+            Sign up for
+          </h1>
+          <h1 className='text-5xl text-center'>
+            🚀🐶LaunchBarkly🐶🚀
+          </h1>
+          <br/>
 
-        <form onSubmit={handleSubmit}>
-          {errorMsg && <p>{errorMsg}</p>}
-          <input
-            name="email"
-            type="email"
-            autoComplete="email"
-            required
-            label="Email"
-            value={email}
-            onChange={(e)=> setEmail(e.target.value)}
-          />
-          <input
-            name="password"
-            type="password"
-            autoComplete="password"
-            required
-            label="Password"
-            value={password}
-            onChange={(e)=> setPassword(e.target.value)}
-          />
-          <button type="submit">Sign up</button> or{' '}
-        </form>
+          <form onSubmit={handleSubmit} className='flex flex-col'>
+            {errorMsg && <p>{errorMsg}</p>}
+            <input
+              className='bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal'
+              name="email"
+              type="email"
+              autoComplete="email"
+              required
+              label="Email"
+              placeholder='email'
+              value={email}
+              onChange={(e)=> setEmail(e.target.value)}
+            />
+            <br/>
+            <input
+              className='bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal'
+              name="password"
+              type="password"
+              autoComplete="password"
+              required
+              label="Password"
+              placeholder='password'
+              value={password}
+              onChange={(e)=> setPassword(e.target.value)}
+            />
+            <br/>
+            <button 
+              type="submit"
+              className="bg-gray-300 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+              >
+                Sign up
+              </button>
+          </form>
+          <br/>
+          <button 
+          className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+          onClick={
+            (e)=>{
+              e.preventDefault()
+              Router.push('/')
+            }
+          }>
+            Home
+          </button>
+        </div>
       </main>
 
     </div>

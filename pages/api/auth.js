@@ -1,6 +1,5 @@
 import {findUser} from '../../lib/user.js'
 import {validate} from '../../lib/password.js'
-import jsHttpCookie from 'cookie';
 
 export default async (req, res) => {
     if (req.method=='POST'){
@@ -16,10 +15,11 @@ export default async (req, res) => {
             res.json({error: "user not found"}) 
             return;
         }
-        if (validate(result, user.password)){
+        const equality = await validate(result, user.password)
+        if (equality){
+            console.log('here')
             res.statusCode = 200
             res.json({message: "success"})
-
             return;
         } else {
             res.statusCode = 500;

@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Router from 'next/router'
-import styles from '../styles/Home.module.css'
 import fetch from 'isomorphic-unfetch';
 import {useState} from 'react'
 import {setCookie} from 'nookies'
@@ -34,45 +33,61 @@ export default function Home(ctx) {
   }
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>SIGN IN</title>
+        <title>🚀🐶 - Home</title>
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to
-        </h1>
-
-        <form onSubmit={handleSubmit}>
-          {errorMsg && <p>{errorMsg}</p>}
-          <input
-            name="email"
-            type="email"
-            autoComplete="email"
-            required
-            label="Email"
-            value={email}
-            onChange={(e)=> setEmail(e.target.value)}
-          />
-          <input
-            name="password"
-            type="password"
-            autoComplete="password"
-            required
-            label="Password"
-            value={password}
-            onChange={(e)=> setPassword(e.target.value)}
-          />
-          <button type="submit">Sign in</button> or{' '}
-        </form>
-
-        <button onClick={
-          (e)=>{
-            e.preventDefault()
-            Router.push('/signup')
-          }
-        }>Sign signup</button>
+      <main className='flex h-screen justify-center items-center'>
+        <div className='flex flex-col'>
+          <h1 className='text-5xl text-center'>
+          🚀🐶LaunchBarkly🐶🚀
+          </h1>
+          <br/>
+          <form onSubmit={handleSubmit} className='flex flex-col'>
+            {errorMsg && <p>{errorMsg}</p>}
+            <input
+              className='bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal'
+              name="email"
+              type="email"
+              autoComplete="email"
+              placeholder='email'
+              required
+              label="Email"
+              value={email}
+              onChange={(e)=> setEmail(e.target.value)}
+            />
+            <br/>
+            <input
+              className='bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal'
+              name="password"
+              type="password"
+              autoComplete="password"
+              required
+              placeholder='password'
+              label="Password"
+              value={password}
+              onChange={(e)=> setPassword(e.target.value)}
+            />
+            <br/>
+            <button 
+              type="submit"
+              className="bg-gray-300 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                Sign in
+            </button>
+          </form>
+          <br/>
+          <button 
+          className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+          onClick={
+            (e)=>{
+              e.preventDefault()
+              Router.push('/signup')
+            }
+          }>
+            Sign up
+          </button>
+        </div>
       </main>
 
     </div>

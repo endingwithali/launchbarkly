@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Router from 'next/router'
-import styles from '../styles/Home.module.css'
 import fetch from 'isomorphic-unfetch'
 import {parseCookies, destroyCookie} from 'nookies'
 import { useEffect } from 'react'
@@ -55,12 +54,12 @@ export default function User(props) {
 
   return (
     
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Create Next App</title>
       </Head>
 
-      <main className={styles.main}>
+      <main>
           {props.email}
           <button
             onClick={(e)=> handleClick(e)}
