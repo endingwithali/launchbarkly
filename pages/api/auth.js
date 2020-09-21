@@ -10,16 +10,19 @@ export default async (req, res) => {
             password: body.password
         }
         const result = await findUser(user.email)
+        console.log('meow')
         if (!result){
             res.statusCode = 500;
             res.json({error: "user not found"}) 
             return;
         }
-        const equality = await validate(result, user.password)
+        const equality =  validate(result, user.password)
+        console.log('a')
         if (equality){
             console.log('here')
             res.statusCode = 200
             res.json({message: "success"})
+            console.log('here')
             return;
         } else {
             res.statusCode = 500;
