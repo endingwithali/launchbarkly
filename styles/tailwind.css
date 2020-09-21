@@ -5,3 +5,7 @@
 @import 'tailwindcss/components';
 
 @import 'tailwindcss/utilities';
+
+img{
+    max-width:500px;
+}
