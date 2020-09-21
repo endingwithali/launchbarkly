@@ -5,7 +5,7 @@ import {useState} from 'react'
 import {setCookie} from 'nookies'
 
 
-export default function Home(ctx) {
+export default function Home() {
   const [errorMsg, setErrorMsg] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -17,7 +17,10 @@ export default function Home(ctx) {
       body: JSON.stringify({
         email,
         password
-      })
+      }),
+        headers:{
+            'Content-Type': 'application/json'
+        }
     })
     .then((result)=>{
       return result.json()
