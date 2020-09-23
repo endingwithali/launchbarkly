@@ -17,7 +17,10 @@ export default function Home() {
       body: JSON.stringify({
         email,
         password
-      })
+      }),
+      headers:{
+        'Content-Type': 'application/json'
+      }
     })
     .then((result)=>{
       return result.json()

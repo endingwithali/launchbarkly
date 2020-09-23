@@ -18,9 +18,9 @@ export default function Home() {
         email,
         password
       }),
-        headers:{
-            'Content-Type': 'application/json'
-        }
+      headers:{
+        'Content-Type': 'application/json'
+      }
     })
     .then((result)=>{
       return result.json()
