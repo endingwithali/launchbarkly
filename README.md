@@ -82,5 +82,5 @@ By design, Next.js relies upon server-side rendering of the content - making it 
 Shout out to @ndneighor, @noodle, and @0xHaas for being my rubber ducks while I worked on this project. 
 
 <div align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/REaa-s68W2I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Watch the video](https://img.youtube.com/vi/REaa-s68W2I/maxresdefault.jpg)](https://youtu.be/REaa-s68W2I)
 </div>
