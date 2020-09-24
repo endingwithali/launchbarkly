@@ -1,46 +1,43 @@
-import Head from 'next/head'
-import Router from 'next/router'
-import {useState} from 'react'
-// import fetch from 'isomorphic-unfetch';
-import {setCookie} from 'nookies'
-
+import Head from 'next/head';
+import Router from 'next/router';
+import { useState } from 'react';
+import { setCookie } from 'nookies';
 
 export default function Home() {
-  const [errorMsg, setErrorMsg] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [errorMsg, setErrorMsg] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  async function handleSubmit(event){ 
-    event.preventDefault()
-    fetch('/api/signup',{
+  async function handleSubmit(event) {
+    event.preventDefault();
+    fetch('/api/signup', {
       method: 'POST',
       body: JSON.stringify({
         email,
-        password
+        password,
       }),
-      headers:{
-        'Content-Type': 'application/json'
-      }
+      headers: {
+        'Content-Type': 'application/json',
+      },
     })
-    .then((result)=>{
-      return result.json()
-    })
-    .then((data)=>{
-        if (data.error){
-            setErrorMsg(data.error)
+      .then((result) => {
+        return result.json()
+      })
+      .then((data) => {
+        if (data.error) {
+          setErrorMsg(data.error);
         } else {
-            setCookie(null, 'barklyToken', 'loggedon')
-            Router.push('/'+email)
+          setCookie(null, 'barklyToken', 'loggedon');
+          Router.push('/'+email);
         }
-    })
+      });
   }
 
   return (
-    <div>
+    <>
       <Head>
         <title>🚀🐶 - Sign Up</title>
       </Head>
-
       <main className='flex h-screen justify-center items-center'>
         <div className='flex flex-col'>
           <h1 className='text-5xl text-center'>
@@ -50,54 +47,56 @@ export default function Home() {
             🚀🐶LaunchBarkly🐶🚀
           </h1>
           <br/>
-
-          <form onSubmit={handleSubmit} className='flex flex-col'>
+          <form 
+            onSubmit={handleSubmit} 
+            className='flex flex-col'
+          >
             {errorMsg && <p>{errorMsg}</p>}
             <input
               className='bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal'
-              name="email"
-              type="email"
-              autoComplete="email"
+              name='email'
+              type='email'
+              autoComplete='email'
               required
-              label="Email"
+              label='Email'
               placeholder='email'
-              value={email}
-              onChange={(e)=> setEmail(e.target.value)}
+              value={ email }
+              onChange={ (e) => setEmail(e.target.value) }
             />
             <br/>
             <input
               className='bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal'
-              name="password"
-              type="password"
-              autoComplete="password"
+              name='password'
+              type='password'
+              autoComplete='password'
               required
-              label="Password"
+              label='Password'
               placeholder='password'
-              value={password}
-              onChange={(e)=> setPassword(e.target.value)}
+              value={ password }
+              onChange={ (e) => setPassword(e.target.value) }
             />
             <br/>
             <button 
-              type="submit"
-              className="bg-gray-300 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+              type='submit'
+              className='bg-gray-300 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'
               >
                 Sign up
-              </button>
+            </button>
           </form>
           <br/>
           <button 
-          className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-          onClick={
-            (e)=>{
-              e.preventDefault()
-              Router.push('/')
+            className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'
+            onClick={
+              (e)=>{
+                e.preventDefault();
+                Router.push('/');
+              }
             }
-          }>
+          >
             Home
           </button>
         </div>
       </main>
-
-    </div>
-  )
+    </>
+  );
 }
