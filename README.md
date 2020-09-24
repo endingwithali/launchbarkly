@@ -10,9 +10,6 @@ This service is a simple login form that utilizes an email and password to check
 
 This project is a demonstration of the use of LaunchDarkly feature flags to toggle password hashing algorithms as well as making calls to external APIs and create/read from a MySQL database. 
 
-
-
-
 ## Getting Started
 
 ### External Dependencies
@@ -67,12 +64,15 @@ This service switches between utilizing industry standard bcrypt and no longer a
 Auth and Sign up calls do not actively check for empty bodies, which will cause errors. Inputs to the calls prevent empty bodies from being sent. 
 
 
+## Publishing
+This project can easily be deployed utilizing [Vercel](https://vercel.co/) thanks to the use of Next.js. You can learn more about deploying utilizing Vercel and their easy command line tool [here](https://vercel.com/docs/platform/deployments)!
+
+## Issues
+If you find any additional issues/questions, feel free to reach out to me via Twitter - [@endingwithali](twitter.com/endingwithali). I'm most responsive there. 
+
+
 ## Why the Separate Server for the LaunchDarkly calls
 
 This project is a [Next.JS](https://nextjs.org/) based project. 
 
 [insert paragraph about issue with serverside rendering]
-
-
-## Issues
-If you find any additional issues/questions, feel free to reach out to me via Twitter - [@endingwithali](twitter.com/endingwithali). I'm most responsive there. 
