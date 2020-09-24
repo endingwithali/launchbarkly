@@ -1,5 +1,5 @@
 <div align="center">
-<h1>🚀🐶 LaunchBarkly 🚀🐶</h1>
+<h1><a href="http://pleasehirethis.dev">🚀🐶 LaunchBarkly 🚀🐶</a></h1>
 </div>
 
 <p align="center">
@@ -9,6 +9,9 @@
 This service is a simple login form that utilizes an email and password to check the reputation of an email via the emailrep.io API. Passwords are hashed, and saved along with the emails in a MySQL database. 
 
 This project is a demonstration of the use of LaunchDarkly feature flags to toggle password hashing algorithms as well as making calls to external APIs and create/read from a MySQL database. 
+
+
+
 
 ## Getting Started
 
