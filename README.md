@@ -13,7 +13,7 @@ This project is a demonstration of the use of LaunchDarkly feature flags to togg
 ## Set Up
 
 ### External Dependencies
-You will need to request an access key from [EmailRep](https://emailrep.io), and set up + deploy the [password checking server](https://github.com/endingwithali/launchbarkly-password).
+You will need to request an access key from [EmailRep](https://emailrep.io), and set up + deploy the [LaunchDarkly password checking server](https://github.com/endingwithali/launchbarkly-password).
 
 In addition, you will need to set up a MySQL instance prior to running this service - the live project uses [Google Cloud SQL for MySQL](https://cloud.google.com/sql/docs/mysql)
 
