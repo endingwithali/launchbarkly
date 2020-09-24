@@ -3,7 +3,7 @@
 </div>
 
 <p align="center">
-  <img src="https://i.pinimg.com/originals/8a/b0/40/8ab04043dc62cb3e5bd63717b56be075.jpg">
+  <img src="https://i.pinimg.com/originals/8a/b0/40/8ab04043dc62cb3e5bd63717b56be075.jpg"/>
 </p>
 
 This service is a simple login form that utilizes an email and password to check the reputation of an email via the [EmailRep.io](http://emailrep.io) API. Passwords are hashed, and saved along with the emails in a MySQL database. 
@@ -81,4 +81,9 @@ By design, Next.js relies upon server-side rendering of the content - making it 
 ## Thanks
 Shout out to @ndneighor, @noodle, and @0xHaas for being my rubber ducks while I worked on this project. 
 
-[![Watch the video](https://img.youtube.com/vi/REaa-s68W2I/maxresdefault.jpg)](https://youtu.be/REaa-s68W2I)
+## Bonus Content
+Click it! 
+
+<p align="center">
+  <a href="https://youtu.be/REaa-s68W2I"><img src="https://img.youtube.com/vi/REaa-s68W2I/hqdefault.jpg"/></a>
+</p>
