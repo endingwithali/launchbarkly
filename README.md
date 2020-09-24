@@ -82,7 +82,7 @@ By design, Next.js relies upon server-side rendering of the content - making it 
 Shout out to @ndneighor, @noodle, and especially @0xHaas for being my rubber ducks while I worked on this project. 
 
 ## Bonus Content
-Click it! 
+Click the image for a surprise! 
 
 <p align="center">
   <a href="https://youtu.be/REaa-s68W2I"><img src="https://img.youtube.com/vi/REaa-s68W2I/hqdefault.jpg"/></a>
