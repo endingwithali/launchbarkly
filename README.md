@@ -10,14 +10,14 @@ This service is a simple login form that utilizes an email and password to check
 
 This project is a demonstration of the use of LaunchDarkly feature flags to toggle password hashing algorithms as well as making calls to external APIs and create/read from a MySQL database. 
 
-## Getting Started
+## Set Up
 
 ### External Dependencies
 You will need to request an access key from [EmailRep](https://emailrep.io), and set up + deploy the [password checking server](https://github.com/endingwithali/launchbarkly-password).
 
 In addition, you will need to set up a MySQL instance prior to running this service - the live project uses [Google Cloud SQL for MySQL](https://cloud.google.com/sql/docs/mysql)
 
-### ENV Vars
+### ENV Vars 
 
 Create a file `next.config.js` in `/`, and fill in with the relevant information:
 
