@@ -54,14 +54,14 @@ This service is **not** secure. Do not pass sensitive passwords through this ser
 
 ### Session Management and Cookies
 
-There is poor session management - the cookie for the logged in session can easily be set manually via console, and is not checked / confirmed on the server side.
+There is poor session management - the cookie for the logged in session can easily be set manually via console, and is not checked / confirmed on any API calls / server side requests. 
 
 ### Hashing
 
-This service switches between utilizing industry standard bcrypt and no longer accepted SHA256. Additionally, the MySQL server where the password values are stored is not secure. 
+This service switches between utilizing industry standard bcrypt and no longer accepted SHA256. Additionally, the MySQL server where the password values are stored is not a secure connection, nor is access to the server secured. 
 
 ### Empty API Calls
-Auth and Sign up calls do not actively check for empty bodies, which will cause errors. Inputs to the calls prevent empty bodies from being sent. 
+Auth and Sign up calls do not actively check for empty bodies - if an empty body is sent to the endpoints, errors will occur. For this implementation, inputs utilized to build the calls prevent empty bodies from being sent. 
 
 
 ## Publishing
@@ -73,6 +73,6 @@ If you find any additional issues/questions, feel free to reach out to me via Tw
 
 ## Why the Separate Server for the LaunchDarkly calls
 
-This project is a [Next.JS](https://nextjs.org/) based project. 
+This project is a [Next.JS](https://nextjs.org/) based project.
 
-[insert paragraph about issue with serverside rendering]
+By design, Next.js relies upon server-side rendering of the content - making it difficult to integrate LaunchDarkly. Options explored involved removing the features that enable Next.JS and it's easy integration into Vercel. I opted for rapid prototyping, and chose to implement a server that could respond to a client side focused implementation. 
