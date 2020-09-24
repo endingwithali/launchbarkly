@@ -9,7 +9,7 @@ export default async (req, res) => {
         await findUser(user.email).then((resp)=>{
             if (resp){
                 res.statusCode = 500;
-                res.json({error: 'user already exists in database'})
+                res.json({error: 'User already exists in database'})
             }
         })
         if (res.statusCode==500){
@@ -22,7 +22,7 @@ export default async (req, res) => {
                 return;
             } else {
                 res.statusCode = 500;
-                res.json({error: 'failed to add user'})
+                res.json({error: 'Failed to add user, try again'})
             }
             return;
         })
