@@ -22,7 +22,7 @@ In addition, you will need to set up a MySQL instance prior to running this serv
 
 ### ENV Vars
 
-Create a file `next.config.js` in `/`, and fill in with the relevant information. .
+Create a file `next.config.js` in `/`, and fill in with the relevant information:
 
 ```Javascript
 module.exports = {
