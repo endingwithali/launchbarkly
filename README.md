@@ -76,3 +76,11 @@ If you find any additional issues/questions, feel free to reach out to me via Tw
 This project is a [Next.JS](https://nextjs.org/) based project.
 
 By design, Next.js relies upon server-side rendering of the content - making it difficult to integrate LaunchDarkly. Options explored involved removing the features that enable Next.JS and it's easy integration into Vercel. I opted for rapid prototyping, and chose to implement a server that could respond to a client side focused implementation. 
+
+
+## Thanks
+Shout out to @ndneighor, @noodle, and @0xHaas for being my rubber ducks while I worked on this project. 
+
+<div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/REaa-s68W2I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
