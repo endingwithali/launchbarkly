@@ -5,40 +5,39 @@ import {parseCookies, destroyCookie} from 'nookies'
 import {useEffect} from 'react'
 
 export async function getServerSideProps(context){
-    // const emailRep = await fetch('https://emailrep.io/'+context.params.email,{
-    //     method: 'GET',
-    //     headers:{
-    //         'Key': process.env.EMAIL_REP,
-    //         'User-Agent': 'launchbarkly',
-    //         'Content-Type': 'application/json'
-    //     }
-    //   })
-    //   .then((res)=>{
-    //       console.log(res)
-    //         if (res.status!=200){
-    //           return null;
-    //         }
-    //     return res.json()
-    //   }).then((data)=>{
-    //     if (!data){
-    //       return null
-    //     }
-    //     return data
-    //   })
-      // if (emailRep == null){
+    const emailRep = await fetch('https://emailrep.io/'+context.params.email,{
+        method: 'GET',
+        headers:{
+            'Key': process.env.EMAIL_REP,
+            'User-Agent': 'launchbarkly',
+            'Content-Type': 'application/json'
+        }
+      })
+      .then((res)=>{
+            if (res.status!=200){
+              return null;
+            }
+        return res.json()
+      }).then((data)=>{
+        if (!data){
+          return null
+        }
+        return data
+      })
+      if (emailRep == null){
         return {      
           props:{
             email: context.params.email
           }
         }
-      // }
-      // return {
-      //   props:{
-      //       email: context.params.email,
-      //       reputation: emailRep.reputation,
-      //       references: emailRep.references
-      //   }
-      // }
+      }
+      return {
+        props:{
+            email: context.params.email,
+            reputation: emailRep.reputation,
+            references: emailRep.references
+        }
+      }
 
 }
 
