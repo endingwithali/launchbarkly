@@ -1,7 +1,11 @@
 
-  # 🚀🐶 LaunchBarkly 🚀🐶
-  
-![image of dog in space](https://i.pinimg.com/originals/8a/b0/40/8ab04043dc62cb3e5bd63717b56be075.jpg)
+<div align="center">
+<h1>🚀🐶 LaunchBarkly 🚀🐶</h1>
+</div>
+
+<p align="center">
+  <img src="https://i.pinimg.com/originals/8a/b0/40/8ab04043dc62cb3e5bd63717b56be075.jpg">
+</p>
 
 This service is a simple login utilizing an email and password to check the reputation of an email via the emailrep.io API. 
 
