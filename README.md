@@ -70,7 +70,7 @@ This project can easily be deployed utilizing [Vercel](https://vercel.co/) thank
 ## Issues
 If you find any additional issues/questions, feel free to reach out to me via Twitter - [@endingwithali](twitter.com/endingwithali). I'm most responsive there. 
 
-## Why the Separate Server for the LaunchDarkly calls
+## Why Next.JS + Separate Server?
 
 This project is a [Next.JS](https://nextjs.org/) based project. With the rise in popularity of JAMstack and serverless products, I wanted to utilize this prototype as an opportunity to dive deeper into understanding Next.JS and the JAMstack community. When researching Next.JS and LaunchDarkly, I realized there was only one example using the two together and it appeared to be nonfunctional. I took this as a challenge and opportunity to create a new use case of the two.
 
