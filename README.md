@@ -74,7 +74,7 @@ If you find any additional issues/questions, feel free to reach out to me via Tw
 
 This project is a [Next.JS](https://nextjs.org/) based project. With the rise in popularity of JAMstack and serverless products, I wanted to utilize this prototype as an opportunity to dive deeper into understanding Next.JS and the JAMstack community. When researching Next.JS and LaunchDarkly, I realized there was only one example using the two together and it appeared to be nonfunctional. I took this as a challenge and opportunity to create a new use case of the two.
 
-By design, Next.js relies upon server-side rendering of the content - making it difficult to integrate LaunchDarkly. Options explored involved removing the features that enable Next.JS and it's easy integration into Vercel. Given this prototype is on a timeline, I made the decision to implement a separate server that could respond to a client side focused implementation. 
+By design, Next.js relies upon server-side rendering of the content - making it difficult to integrate LaunchDarkly. Options explored involved removing the features that enable Next.JS and it's easy integration into Vercel. Given this prototype is on a timeline, I made the decision to implement a separate server that could respond to a client side focused implementation with the goal of eventual exploration of alternative options. 
 
 
 ## Thanks
